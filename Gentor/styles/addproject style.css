@@ -1,0 +1,138 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+#GentorLogo{
+    height: 80px;
+    width: 150px;
+}
+#navcontainer, #container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#actionscontainer{
+    margin-top: 20px;
+}
+nav{
+    border-bottom: solid;
+    border-bottom-color: #c6c6c6;
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+.dropbtn {
+    margin-left: 30%;
+    width: 250px;
+    background-color: #fff;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'poppins';
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+  }
+  ion-icon{
+    vertical-align: middle;
+  }
+  #addtask{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+   }
+   input{
+    padding: 10px;
+    width: 100px;
+    margin-right: 5px;
+   }
+   #projectname{
+    width: 500px;
+   }
+ 
+   .remove-button, #addBtn, #createBtn, #cancelBtn{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+   }
+   .remove-button ion-icon, #addBtn ion-icon{
+    font-size: 22px;
+    font-weight: bolder;
+   }
+   
+   #task{
+    margin-top: 20px;
+   }
+
+   
+   .remove-button:hover{
+    background-color: #f9f9f9;
+    color: black;
+    transition: 0.5ms ease-in-out
+   }
+   #buttons{
+    text-align: end;
+   }
+   #createBtn, #cancelBtn{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding: 8px;
+    font-family: 'poppins';
+    font-weight: bolder;
+    font-size: medium;
+   }
+   #createBtn ion-icon{
+    vertical-align:middle;
+    font-weight: bolder;
+    font-size: large;
+   }
+   #createBtn{
+    background-color: #2192ff;
+    color: white;
+   }
+   #createBtn:hover{
+    background-color: #205295;
+    transform: 0.5ms ease-in-out;
+   }
+   #cancelBtn{
+    background-color: #f9f9f9;
+   }
+   #cancelBtn:hover{
+    background-color: #f1f1f1;
+    transition: 0.5ms ease-in-out;
+   }
+   .container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+   }

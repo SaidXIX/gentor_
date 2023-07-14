@@ -1,0 +1,64 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+#GentorLogo{
+    height: 80px;
+    width: 150px;
+
+}
+nav{
+    padding-left: 35px;
+}
+
+#formcontainer{
+padding: 60px;
+display:flex;
+justify-content: center;
+width: 35%;
+margin: 0 auto;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+height: 50%;
+}
+#userPic{
+    height: 95px;
+}
+#piccontainer{
+       margin-top: 0px;
+}
+#signInBtn a{
+       text-decoration: none;
+       color: #2192ff;
+}
+input{
+    width: 400px;
+    padding: 10px;
+}
+#signUpBtn{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #2192ff;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    font-family: 'poppins';
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#signUpBtn:hover {
+    background-color: #205295;
+    transition: 0.5s ease-in;
+}
+#formcontainer #submitBtn ,#logInBtn, #piccontainer {
+    text-align: center;
+}
+#logInBtn a{
+    text-decoration: none;
+    color: #2192ff;
+}
+#formcontainer div{
+    margin-top: 12px;
+}

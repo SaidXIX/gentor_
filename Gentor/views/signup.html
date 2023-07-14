@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/signup style.css ">
+    <link rel="icon" href="../assets/octagon.svg" type="favicon" sizes="32 * 32"/>
+    <title>Gentor</title>
+</head>
+<body>
+    <nav>
+        <div id="navcontainer">
+            <div id="logocontainer">
+                <a href="index.html"><img src="../assets/gentor main.svg" id="GentorLogo"></a>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <div id="formcontainer">
+        <form action="../pscripts/signup redirect.php" method="post">
+            <div id="piccontainer">
+                <img id="userPic" src="../assets/user.png" alt="userpic">
+            </div>
+            <div>
+                <label for="email"><b>Username</b></label>
+                <br>
+                <input name="username" type="text" name="email" id="email" placeholder="Bouziani Said">
+            </div>
+            <div>
+                <label for="email"><b>Email</b></label>
+                <br>
+                <input name="email" type="email" name="email" id="email" placeholder="Something@email.com">
+            </div>
+            <div>
+                <label for="Password"><b>Password</b></label>
+                <br>
+                <input name=password type="password" name="password" id="password" placeholder="password here">
+            </div>
+            <div id="submitBtn">
+                <button name="signup" id="signUpBtn" type="submit">Sign up</button>
+            </div>
+            <hr>
+            <div id="logInBtn">
+                <p>Already have an account? <b><a href="../views/logIn.html">Log in</a></b></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

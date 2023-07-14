@@ -1,0 +1,276 @@
+    if(isset($_POST['createGraph'])){
+        $projectname=$_POST['projectname'];
+
+        //INSERT A NEW PROJECT
+        $insertIntoProjectQuery="INSERT INTO project (projectName, userId) VALUES('$projectname','$id')";
+        $insertIntoProjectQueryExe = mysqli_query($conn,$insertIntoProjectQuery);
+        
+        //RETREIVE PROJECT ID
+        $SelectProjectQuery="SELECT * FROM project WHERE userId = '$id'";
+        $SelectProjectQueryExe=mysqli_query($conn, $SelectProjectQuery);
+        while($row=mysqli_fetch_assoc($SelectProjectQueryExe)){
+            $projectId=$row['projectId'];
+        }
+
+
+
+
+        for($i=0; $i<count($_POST['taskId']) && $i<count($_POST['taskName'])  && $i<count($_POST['taskDuration']) && $i<count($_POST['predecessor']) ; $i++){
+
+            //RECEIVE TASKS INFORMATIONS
+            $taskId=$_POST['taskId'][$i];
+            $taskName=$_POST['taskName'][$i];
+            $taskDuration=$_POST['taskDuration'][$i];
+            $predecessor=$_POST['predecessor'][$i];
+
+            //INSERT A NEW TASK
+            $insertIntoTaskQuery="INSERT INTO task(taskNbr,taskName,taskDuration,predecessor,projectId) VALUES ('$taskId', '$taskName','$taskDuration','$predecessor','$projectId')";
+            $insertIntoTaskQueryExe=mysqli_query($conn,$insertIntoTaskQuery);
+        }
+    }
+
+
+
+
+
+
+
+
+    <div id="addtask">
+        <form action="" method="post">
+            <div>
+                <label for="projectname"><b>Project name</b></label>
+                <br>
+                <input type="text" name="projectname" id="projectname"> <button class="add-button" id="addBtn" title="add task"><ion-icon name="add-outline"></ion-icon></button>
+            </div>
+            <div id="task" class="form-wrapper">
+                <div>
+                <label for="task"><b>Task</b></label>
+                <br>
+                <input type="number" name="taskId[]" placeholder="Task Id "/>
+                <input type="text" name="taskName[]" id="taskName" placeholder="Name of the task" min="1">
+                <input type="number" name="taskDuration[]" id="taskDuration" placeholder="Duration">
+                <input type="text" name="predecessor[]" id="predecessor" placeholder="Predecessor">
+                <br>
+                </div>
+            </div>
+            <hr>
+            <div id="buttons">
+                    <button name="createGraph" id="createBtn"><ion-icon name="git-network-outline"></ion-icon> Create</button>
+                    <button id="cancelBtn">Cancel</button>
+                <div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        jQuery(document).ready(function() {
+            var maxLimit = 12;
+            var appendHTML=
+            '<div id="taskAdded"><label for="task"><b>Task</b></label><br><input type="number" name="taskId[]" /><input type="text" name="taskName[]" id="taskName" placeholder="Name of the task" min="1"><input type="number" name="taskDuration[]" id="taskDuration" placeholder="Duration"><input type="text" name="predecessor[]" id="predecessor" placeholder="Predecessor"><button id="deleteBtn" title="delete task"><ion-icon name="trash-outline"></ion-icon></button><br></div>';
+
+            var x=1;
+        //add input field
+            jQuery('.add-button').click(function(e){
+                e.preventDefault();
+                if(x < maxLimit){ 
+	            jQuery('.form-wrapper').append(appendHTML);
+	            x++;
+	            }
+            });
+            
+        //delete input field    
+	    jQuery('.form-wrapper').on('click', '.remove-button', function(e){
+	        e.preventDefault();
+	        jQuery(this).parent.remove();
+	        x--;
+	    });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ion-icon{
+    vertical-align: middle;
+  }
+  #title{
+    padding-left: 35px;
+  }
+  #action {
+     text-align:center;
+  }
+  #action button{
+    padding: 12px;
+    margin-top: 27px;
+    border: none;
+    background-color: #2192ff;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'poppins';
+    cursor: pointer;
+  }
+
+    #action button:hover{
+    background-color: #205295;
+    transition: 0.5s ease-in;
+    }
+    ion-icon{
+    font-weight: bold;
+   }
+
+   #addtask{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+   }
+   input{
+    padding: 10px;
+    width: 100px;
+    margin-right: 5px;
+   }
+   #projectname{
+    width: 500px;
+   }
+ 
+   #deleteBtn, #addBtn, #createBtn, #cancelBtn{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+   }
+   #deleteBtn ion-icon, #addBtn ion-icon{
+    font-size: 22px;
+    font-weight: bolder;
+   }
+   #task{
+    margin-top: 20px;
+   }
+   #deleteBtn{
+    background-color: white;
+    color: red;
+   }
+   #deleteBtn:hover{
+    background-color: red;
+    color: white;
+    transition: 0.5ms ease-in-out
+   }
+   #buttons{
+    text-align: end;
+   }
+   #createBtn, #cancelBtn{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding: 8px;
+    font-family: 'poppins';
+    font-weight: bolder;
+    font-size: medium;
+   }
+   #createBtn ion-icon{
+    vertical-align:middle;
+    font-weight: bolder;
+    font-size: large;
+   }
+   #createBtn{
+    background-color: #2192ff;
+    color: white;
+   }
+   #createBtn:hover{
+    background-color: #205295;
+    transform: 0.5ms ease-in-out;
+   }
+   #cancelBtn{
+    background-color: #f9f9f9;
+   }
+   #cancelBtn:hover{
+    background-color: #f1f1f1;
+    transition: 0.5ms ease-in-out;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+                anychart.onDocumentReady(function () {
+   
+   // data
+   var data = <?php echo json_encode($taskarray);?>;
+
+
+   // create a PERT chart
+   var chart = anychart.pert();
+
+   // set chart data
+   chart.data(data[1], "as-table");
+
+   // set the title of the chart
+   chart.title("PERT Chart");
+
+   // set the container id for the chart
+   chart.container("container");
+
+   // initiate drawing the chart
+   chart.draw();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

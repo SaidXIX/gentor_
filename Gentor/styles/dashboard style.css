@@ -1,0 +1,116 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+#GentorLogo{
+    height: 80px;
+    width: 150px;
+}
+#container{
+  margin-left: 40px;
+}
+#action{
+  text-align: center;
+}
+#navcontainer, #container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+#actionscontainer{
+    margin-top: 20px;
+}
+nav{
+    border-bottom: solid;
+    border-bottom-color: #c6c6c6;
+    padding-left: 35px;
+    padding-bottom: 20px;
+}
+.dropbtn {
+    margin-left: 30%;
+    width: 250px;
+    background-color: #fff;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'poppins';
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+  }
+  #action button{
+    padding: 12px;
+    margin-top: 27px;
+    border: none;
+    background-color: #2192ff;
+    border-radius: 7px;
+    color: #fff;
+    font-family: 'poppins';
+    cursor: pointer;
+  }
+
+    #action button:hover{
+    background-color: #205295;
+    transition: 0.5s ease-in;
+    }
+    ion-icon{
+    font-weight: bold;
+   }
+  #displayprojects{
+    display: flex;
+    justify-content: center;
+  }
+  #displayprojects table{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 80%;
+  }
+  #displayprojects table td{
+    text-align: center;
+  }
+  #displayprojects th{
+    background-color: #EDF2F7;
+    font-weight: medium;
+  }
+  table th, table td{
+    padding: 10px;
+  }
+  .operations ion-icon{
+    text-decoration: none;
+    color: #205295;
+    background-color: #EDF2F7 ;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: large;
+    font-weight: 900;
+  }
